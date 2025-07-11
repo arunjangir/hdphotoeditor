@@ -1,111 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Vinkasa AI Enhancer - WhatsApp-based AI-powered photo enhancement service." />
-  <meta property="og:title" content="Vinkasa AI Enhancer - HD Photo via WhatsApp" />
-  <meta property="og:description" content="Convert normal photos to HD using AI. Fast, secure, and WhatsApp-based." />
-  <meta property="og:image" content="https://software.vinkasa.com/1724407181120.jpg" />
-  <meta property="og:url" content="https://software.vinkasa.com/" />
-  <meta property="og:type" content="website" />
-
-  <title>Vinkasa AI Enhancer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #007b5e;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-    main {
-      max-width: 800px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #007b5e;
-    }
-    section {
-      margin-bottom: 30px;
-    }
-    a.button {
-      display: inline-block;
-      padding: 10px 15px;
-      background: #007b5e;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #333;
-      color: white;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image HD Converter - WhatsApp Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #25D366;
+            --dark: #075E54;
+            --light: #DCF8C6;
+            --white: #ffffff;
+            --gray: #f5f5f5;
+            --dark-gray: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .logo i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+        
+        nav {
+            background-color: var(--white);
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--dark);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Vinkasa AI Enhancer</h1>
-    <p>Transform your photos into stunning HD — directly via WhatsApp</p>
-  </header>
-
-  <main>
-    <section id="about">
-      <h2>About Us</h2>
-      <p>Vinkasa AI Enhancer is an AI-based photo enhancement service that converts normal or low-quality images into high-definition quality. Our service is provided exclusively through WhatsApp, making it fast, secure, and easy to use. We’re based in India and focus on delivering simple, privacy-conscious AI tools to the everyday user.</p>
-    </section>
-
-    <section id="how-it-works">
-      <h2>How It Works</h2>
-      <p>Send your photo to us on WhatsApp, and we’ll enhance it using cutting-edge AI models. Receive your HD version within minutes — no apps, no sign-ups.</p>
-      <a href="https://wa.me/919999999999" class="button">Start on WhatsApp</a>
-    </section>
-
-    <section id="tos">
-      <h2>Terms of Service</h2>
-      <ul>
-        <li>Service is available only through WhatsApp at the number provided.</li>
-        <li>By sending a photo, users consent to AI processing solely for enhancement purposes.</li>
-        <li>No adult, illegal, or copyrighted content is allowed.</li>
-        <li>Images are deleted shortly after processing.</li>
-        <li>No refunds once processing is completed and delivered.</li>
-        <li>We are not responsible for poor input image quality results.</li>
-        <li>Service availability may vary during high traffic or maintenance.</li>
-      </ul>
-    </section>
-
-    <section id="privacy">
-      <h2>Privacy Policy</h2>
-      <ul>
-        <li>We only collect photos and WhatsApp messages for service delivery.</li>
-        <li>We do not share or store images longer than necessary.</li>
-        <li>All communications are secured and processed privately.</li>
-        <li>No personal data is used beyond the conversation purpose.</li>
-        <li>For questions, contact: support@vinkasa.com</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Have questions? Reach out via WhatsApp or email us at <strong>support@vinkasa.com</strong>.</p>
-      <a href="https://wa.me/919999999999" class="button">Chat on WhatsApp</a>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Vinkasa AI Enhancer. All rights reserved.
-  </footer>
+    <header>
+        <div class="logo">
+            <i class="fab fa-whatsapp"></i>
+            Image HD Converter
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">User Data Deletion</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section class="hero">
+            <h1>Enhance Your WhatsApp Images</h1>
+            <p>Transform your low-quality WhatsApp images into stunning HD versions with our powerful conversion tool. Get crystal clear results instantly!</p>
+            <a href="#" class="cta-button">Convert Now</a>
+        </section>
+        
+        <section class="features">
+            <div class="feature-card">
+                <i class="fas fa-magic"></i>
+                <h3>AI-Powered Enhancement</h3>
+                <p>Our advanced AI technology automatically improves image quality, sharpness, and clarity.</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Instant Processing</h3>
+                <p>Get HD versions of your images in seconds without any complicated steps.</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-lock"></i>
+                <h3>Secure & Private</h3>
+                <p>Your images are processed securely and never stored on our servers.</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Image HD Converter. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">User Data Deletion</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </footer>
 </body>
 </html>
