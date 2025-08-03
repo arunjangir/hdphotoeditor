@@ -2,240 +2,354 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="facebook-domain-verification" content="m6x030oqc4tqcqay35qqpjls2uj7zg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image HD Converter - WhatsApp Tool</title>
+    <title>NCS Vinkasa - Job Notifications via WhatsApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #25D366;
-            --dark: #075E54;
-            --light: #DCF8C6;
-            --white: #ffffff;
-            --gray: #f5f5f5;
-            --dark-gray: #333333;
+        .gradient-bg {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        
-        body {
-            background-color: var(--gray);
-            color: var(--dark-gray);
-            line-height: 1.6;
-        }
-        
-        header {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 1.5rem 0;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .logo {
-            font-size: 2rem;
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: #FFD700;
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
             font-weight: bold;
-            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
-        
-        .logo i {
-            color: var(--primary);
-            margin-right: 0.5rem;
+        .pulse-animation {
+            animation: pulse 2s infinite;
         }
-        
-        nav {
-            background-color: var(--white);
-            padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: var(--dark-gray);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: var(--primary);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 3rem 0;
-            background-color: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
-        }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-        
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        .cta-button:hover {
-            background-color: var(--dark);
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .feature-card {
-            background-color: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        
-        .feature-card i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h3 {
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-        
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 1rem 0;
-        }
-        
-        .footer-links a {
-            color: var(--light);
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
             }
-            
-            .hero h1 {
-                font-size: 2rem;
+            50% {
+                transform: scale(1.05);
             }
-            
-            .features {
-                grid-template-columns: 1fr;
+            100% {
+                transform: scale(1);
             }
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="logo">
-            <i class="fab fa-whatsapp"></i>
-            Image HD Converter
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="text-center md:text-left mb-6 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-2">NCS Vinkasa</h1>
+                    <p class="text-xl">Smart Job Notifications via WhatsApp</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 shadow-lg text-center">
+                    <p class="text-gray-800 font-semibold">Starting at just</p>
+                    <p class="text-3xl font-bold text-green-600">₹19/month</p>
+                    <p class="text-gray-600 text-sm">That's less than ₹0.65 per day!</p>
+                </div>
+            </div>
         </div>
     </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">User Data Deletion</a></li>
-        </ul>
-    </nav>
-    
-    <div class="container">
-        <section class="hero">
-            <h1>Enhance Your WhatsApp Images</h1>
-            <p>Transform your low-quality WhatsApp images into stunning HD versions with our powerful conversion tool. Get crystal clear results instantly!</p>
-            <a href="#" class="cta-button">Convert Now</a>
-        </section>
-        
-        <section class="features">
-            <div class="feature-card">
-                <i class="fas fa-magic"></i>
-                <h3>AI-Powered Enhancement</h3>
-                <p>Our advanced AI technology automatically improves image quality, sharpness, and clarity.</p>
+
+    <!-- Hero Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Never Miss a Job Opportunity Again!</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Get personalized job notifications directly on WhatsApp based on your education and location. 
+                        Our AI-powered service (coming soon) will make job hunting effortless!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/+919461575073" 
+                           class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-all pulse-animation">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                            Start Now for ₹19
+                        </a>
+                        <a href="#pricing" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-all">
+                            <i class="fas fa-tags"></i>
+                            View All Plans
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384023.png" alt="WhatsApp Job Notifications" class="w-64 h-64 object-contain">
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why Choose NCS Vinkasa?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-green-500 text-4xl mb-4">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Education-Based Matching</h3>
+                    <p class="text-gray-600">Get jobs that perfectly match your educational qualifications.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-green-500 text-4xl mb-4">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Location-Specific Jobs</h3>
+                    <p class="text-gray-600">Receive opportunities near your preferred location.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-green-500 text-4xl mb-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">AI Features Coming Soon</h3>
+                    <p class="text-gray-600">Smart matching and personalized recommendations powered by AI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Affordable Pricing Plans</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Choose the plan that works best for you. The longer you subscribe, the more you save!
+            </p>
             
-            <div class="feature-card">
-                <i class="fas fa-bolt"></i>
-                <h3>Instant Processing</h3>
-                <p>Get HD versions of your images in seconds without any complicated steps.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- 1 Month Plan -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow relative">
+                    <h3 class="text-xl font-bold mb-4">1 Month Plan</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-gray-800">₹19</span>
+                        <span class="text-gray-600">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Personalized job alerts</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Education-based matching</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Location-specific jobs</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/+919461575073" class="block w-full bg-gray-800 hover:bg-gray-700 text-white text-center font-bold py-3 px-4 rounded-lg transition-colors">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Popular 6 Months Plan -->
+                <div class="bg-white border-2 border-green-500 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow relative pricing-card">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3 class="text-xl font-bold mb-4">6 Months Plan</h3>
+                    <div class="mb-2">
+                        <span class="text-4xl font-bold text-gray-800">₹95</span>
+                        <span class="text-gray-600">(₹15.83/month)</span>
+                    </div>
+                    <p class="text-green-600 font-semibold mb-4">Save 17% + 1 Month FREE!</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Everything in 1 Month Plan</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>1 Month FREE (Pay for 5, Get 6)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Priority support</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/+919461575073" class="block w-full gradient-bg hover:bg-green-600 text-white text-center font-bold py-3 px-4 rounded-lg transition-colors">
+                        Get Best Value
+                    </a>
+                </div>
+                
+                <!-- 12 Months Plan -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow relative">
+                    <h3 class="text-xl font-bold mb-4">12 Months Plan</h3>
+                    <div class="mb-2">
+                        <span class="text-4xl font-bold text-gray-800">₹190</span>
+                        <span class="text-gray-600">(₹15.83/month)</span>
+                    </div>
+                    <p class="text-green-600 font-semibold mb-4">Save 17% + 2 Months FREE!</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Everything in 6 Months Plan</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>2 Months FREE (Pay for 10, Get 12)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Early access to AI features</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/+919461575073" class="block w-full bg-gray-800 hover:bg-gray-700 text-white text-center font-bold py-3 px-4 rounded-lg transition-colors">
+                        Get Long-Term Savings
+                    </a>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">What Our Users Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-500 text-xl font-bold mr-4">
+                            A
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Amit Kumar</h4>
+                            <p class="text-gray-500 text-sm">B.Tech Graduate</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        "NCS Vinkasa helped me find 3 interview calls in my first month itself! For just ₹19, it's the best investment I've made in my job search."
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-500 text-xl font-bold mr-4">
+                            P
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Priya Sharma</h4>
+                            <p class="text-gray-500 text-sm">MBA Graduate</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        "The location-based filtering is amazing. I only get jobs within 10km of my home. Saved me so much time and travel expenses!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 gradient-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Job Search?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                For less than the price of a cup of coffee per month, get access to the best job opportunities tailored just for you!
+            </p>
+            <a href="https://wa.me/+919461575073" class="inline-block bg-white text-green-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+                <i class="fab fa-whatsapp mr-2"></i> Start Now for ₹19
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Frequently Asked Questions</h2>
             
-            <div class="feature-card">
-                <i class="fas fa-lock"></i>
-                <h3>Secure & Private</h3>
-                <p>Your images are processed securely and never stored on our servers.</p>
+            <div class="space-y-4">
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <button class="flex justify-between items-center w-full text-left font-semibold">
+                        <span>How does the service work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="mt-2 text-gray-600">
+                        After subscribing, you'll receive a WhatsApp message asking for your educational qualifications and preferred job locations. Our system will then send you relevant job notifications directly to your WhatsApp based on these criteria.
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <button class="flex justify-between items-center w-full text-left font-semibold">
+                        <span>What makes NCS Vinkasa different?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="mt-2 text-gray-600">
+                        Unlike other job portals, we deliver personalized opportunities directly to WhatsApp, saving you time from searching multiple websites. Our affordable pricing (starting at just ₹19/month) makes professional job matching accessible to everyone.
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <button class="flex justify-between items-center w-full text-left font-semibold">
+                        <span>When will the AI features be available?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="mt-2 text-gray-600">
+                        Our AI-powered job matching system is currently in development and will be rolled out to all subscribers soon. Longer-term plan subscribers will get early access to these advanced features.
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <button class="flex justify-between items-center w-full text-left font-semibold">
+                        <span>How do I cancel my subscription?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="mt-2 text-gray-600">
+                        You can cancel anytime by sending "STOP" to our WhatsApp number. For prepaid plans, you'll continue to receive notifications until your paid period ends.
+                    </div>
+                </div>
             </div>
-        </section>
-    </div>
-    
-    <footer>
-        <p>&copy; 2023 Image HD Converter. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">User Data Deletion</a>
-            <a href="#">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-2xl font-bold">NCS Vinkasa</h3>
+                    <p class="text-gray-400">Smart Job Notifications</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://wa.me/+919461575073" class="text-2xl text-green-400 hover:text-green-300">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 NCS Vinkasa. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Simple FAQ toggle functionality
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
